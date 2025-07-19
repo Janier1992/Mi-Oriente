@@ -190,15 +190,14 @@ logger.error = (msg, options) => {
 }
 
 export default defineConfig({
-	// --- CORREGIDO PARA GITHUB PAGES ---
 	base: '/Mi-Oriente/',
-	// ------------------------------------
 	customLogger: logger,
+	// --- AJUSTE FINAL: Los plugins de Hostinger solo se añaden en desarrollo ---
 	plugins: [
-		...(isDev ? [inlineEditPlugin(), editModeDevPlugin()] : []),
 		react(),
-		addTransformIndexHtml
+		...(isDev ? [inlineEditPlugin(), editModeDevPlugin(), addTransformIndexHtml] : []),
 	],
+	// -------------------------------------------------------------------------
 	server: {
 		cors: true,
 		headers: {
