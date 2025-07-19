@@ -190,9 +190,9 @@ logger.error = (msg, options) => {
 }
 
 export default defineConfig({
-	// --- AÑADIDO PARA GITHUB PAGES ---
-	base: '/nombre-de-tu-repositorio/',
-	// ---------------------------------
+	// --- CORREGIDO PARA GITHUB PAGES ---
+	base: '/Mi-Oriente/',
+	// ------------------------------------
 	customLogger: logger,
 	plugins: [
 		...(isDev ? [inlineEditPlugin(), editModeDevPlugin()] : []),
