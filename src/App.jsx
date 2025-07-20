@@ -1,5 +1,5 @@
-
 import React from 'react';
+// Se mantiene el alias "as Router"
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import { Helmet } from 'react-helmet';
 import { Toaster } from '@/components/ui/toaster';
@@ -20,7 +20,9 @@ import ContactPage from '@/pages/ContactPage';
 
 function App() {
   return (
-    <Router>
+    // --- AQUÍ ESTÁ EL CAMBIO ---
+    // Añadimos la propiedad 'basename' para que funcione en GitHub Pages
+    <Router basename="/Mi-Oriente">
       <Helmet>
         <title>Domicilios MiOriente - Plataforma #1 del Oriente Antioqueño</title>
         <meta name="description" content="La plataforma líder de domicilios en el Oriente Antioqueño. Conectamos tiendas locales, clientes y domiciliarios en una experiencia única de compra y entrega." />
